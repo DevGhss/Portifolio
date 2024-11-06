@@ -1,0 +1,756 @@
+@import url('https://fonts.googleapis.com/css2?family=Jersey+15&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jersey+15&family=Jersey+25&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #333;
+    color: #fff;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+    width: 0.8rem;
+  }
+  
+::-webkit-scrollbar-thumb {
+    background: #7b7b7b;
+  }
+
+header {
+    width: 100%;
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #4caf50;
+    z-index: 3;
+}
+
+
+/* Estilo do botão de menu */
+.menu-button {
+  font-size: 18px;
+  padding: 10px 20px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+/* Estilo do menu */
+.menu {
+  max-height: 0;
+  overflow: hidden;
+  position: absolute;
+  top: 50px;
+  right: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  transition: max-height 0.4s ease; /* Transição suave */
+}
+
+/* Estilo da lista de links */
+.menu ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu ul li {
+  padding: 10px 20px;
+  border-bottom: 1px solid #ddd;
+}
+
+.menu ul li {
+  text-align: center;
+  font-size: 18px;
+  & a{
+    text-decoration: none;
+    color: #333;
+  }
+}
+
+.menu ul li:last-child {
+  border-bottom: none;
+}
+
+/* Efeito de hover nos itens do menu */
+.menu ul li:hover {
+  background-color: #f0f0f0;
+}
+
+/* Estilo para o menu ativo */
+.menu.active {
+  max-height: 200px; /* Altura para expandir o menu */
+}
+
+
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+}
+
+/* Estilos do interruptor */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 24px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slider:before {
+    content: "";
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    background-color: rgb(179, 175, 175);
+    border-radius: 50%;
+    left: 4px;
+    bottom: 3px;
+    transition: 0.4s;
+}
+
+/* Estilos para os ícones de sol e lua */
+.sun-icon,
+.moon-icon {
+    position: absolute;
+    font-size: 14px;
+    transition: opacity 0.4s;
+}
+
+.sun-icon {
+    color: #ff0;
+    margin-left: 28px;
+    opacity: 0;
+    /* Oculto no modo escuro */
+}
+
+.moon-icon {
+    margin-left: -23px;
+    color: #333;
+    opacity: 1;
+    /* Visível no modo escuro */
+}
+
+/* Quando o interruptor está ativo (modo claro) */
+input:checked+.slider {
+    background-color: #333;
+}
+
+input:checked+.slider:before {
+    transform: translateX(26px);
+}
+
+body.light-theme .sun-icon {
+    opacity: 1;
+}
+
+body.light-theme .moon-icon {
+    opacity: 0;
+}
+
+.menu-button {
+    background-color: #4caf50;
+    border: none;
+    color: white;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* Conteúdo principal */
+#parte-inicial
+ {
+    margin-left: 20%;
+    padding: 20px;
+}
+
+#sobre-mim {
+    padding: 20px;
+    margin-top: 10%;
+}
+
+.profile h1 {
+    font-size: 70px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    font-family: "Jersey 15", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    margin-top: 50px;
+}
+
+.profile p {
+    flex: 1;
+    margin: 0 20px;
+    text-align: justify;
+}
+
+.images {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.circle-image {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.dev-image {
+    width: 400px;
+    height: auto;
+    border-radius: 10px;
+    margin-left: 50%;
+    margin-top: -10%;
+}
+
+#sobre-mim {
+    & .profile {
+        & p {
+            font-family: "Jersey 25", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            max-width: 340px;
+            font-size: 25px;
+        }
+    }
+    & #foto{
+        margin-top: -24%;        margin-right: 16%;
+    }
+    & .circle-image:nth-last-child(1){
+        margin-top: 20%;
+        margin-left: 5%;
+    }
+}
+
+/* Seção de habilidades */
+.skills {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 8%;
+  }
+  
+  .skills h2 {
+    font-family: "Jersey 25", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 59px;
+    margin-bottom: 20px;
+  }
+  
+  .skills-icons {
+    display: flex;
+    justify-content: center;
+    gap: 10%;
+    flex-wrap: wrap;
+    padding: 50px;
+    max-width: 700px;
+  }
+  
+  .skills-icons img {
+    margin-top: 10px;
+    width: 22%;
+    height: auto;
+    
+  }
+
+
+
+  #projetos{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 8%;
+  }
+  
+  #projetos h1 {
+    font-family: "Jersey 25", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 59px;
+    margin-bottom: 20px;
+  }
+
+ /* Estilização do container e centralização */
+.carousel-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 80%;
+  margin: 0 auto;
+}
+
+/* Carrossel slides */
+.carousel {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+  max-width: 500px;
+}
+
+.carousel-slide {
+  min-width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.carousel-slide img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+/* Botões do carrossel */
+.carousel-btn {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 2rem;
+  padding: 10px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.prev {
+  left: -50px;
+}
+
+.next {
+  right: -50px;
+}
+
+/* Frase abaixo do carrossel */
+.carousel-caption {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-top: 10px;
+  color: #333;
+}
+
+
+  #links-de-contato .container {
+    text-align: center;
+    width: 90%;
+    max-width: 500px;
+  }
+
+  /* Título */
+  #links-de-contato {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 10%;
+    margin-bottom: 15%;
+  }
+  #links-de-contato .container h1 {
+    font-family: "Jersey 25", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 59px;
+    margin-bottom: 1rem;
+  }
+
+
+  .contact{
+    margin-top: 10%;
+  }
+.contact h1{
+  text-align: center;
+  font-family: "Jersey 25", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 59px;
+  margin-bottom: 20px;
+    color: white;
+}
+.contact form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    margin: 5rem auto;
+    text-align: center;
+}
+.contact form .input-box{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.contact form .input-box input,
+.contact form textarea{
+    width: 90%;
+    padding: 2.5rem;
+    font-size: 1.8rem;
+    background: #4caf4f2d;
+    border-radius: 2rem;
+    border: 2px solid #4caf50;
+    margin: 1.5rem 0;
+    resize: none;
+}
+.contact form .btn{
+    margin-top: 2rem;
+}
+
+.btn{
+  display: inline-block;
+  padding: 1rem 2.8rem;
+  background: #4caf50;
+  box-shadow: 0 0 25px #4caf50;
+  border-radius: 4rem;
+  font-size: 1.6rem;
+  color: black;
+  border: 2px solid transparent;
+  font-weight: 600;
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+}
+.btn:hover{
+  transform: scale(1.05);
+  box-shadow: 0 0 50px #4caf50;
+}
+
+  /* Ícones de contato */
+  .social-icons {
+    display: flex;
+    justify-content: center;
+  }
+ 
+
+/* Rodapé */
+footer {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    font-size: 14px;
+}
+
+/* Modo Claro */
+body.light-theme {
+    background-color: #FFFEDB;
+    color: #000;
+}
+
+body.light-theme header {
+    background-color: #AEE637;
+}
+
+body.light-theme footer {
+    background-color: #AEE637;
+}
+
+body.light-theme .slider {
+    background-color: #ccc;
+}
+body.light-theme ::-webkit-scrollbar-thumb{
+    background: #AEE637;
+}
+body.light-theme input:checked+.slider {
+    background-color: #FFFEDB;
+}
+
+body.light-theme .card svg{
+  color: #000;
+}
+body.light-theme .contact h1{
+  color: #000;
+}
+@media screen and (max-width: 1200px){
+  .dev-image{
+    margin-left: 10%;
+    width: 50%;
+  }
+}
+/* Responsividade */
+@media screen and (max-width: 768px) {
+  .dev-image{
+    display: none;
+  }
+    .images {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .profile p {
+        margin: 20px 0;
+        text-align: center;
+    }
+
+    .circle-image {
+        width: 100px;
+        height: 100px;
+    }
+    .carousel-container {
+      width: 90%;       /* Ajusta a largura do carrossel em telas menores */
+  }
+  
+  .carousel-slide img {
+      border-radius: 5px; /* Ajusta as bordas das imagens em telas menores */
+  }
+
+  /* Reduz o tamanho dos botões de navegação e posiciona mais próximo do carrossel */
+  .carousel-btn {
+      font-size: 1.5rem;
+      padding: 8px;
+  }
+  
+  .prev {
+      left: -30px;
+  }
+  
+  .next {
+      right: -30px;
+  }
+
+  /* Ajusta o tamanho da legenda abaixo do carrossel */
+  .carousel-caption {
+      font-size: 1rem;
+  }
+}
+@media screen and (max-width: 900px) {
+  #sobre-mim {
+    & .profile {
+        & p {
+          font-family: Arial, Helvetica, sans-serif;
+        }}}
+}
+  
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+  .carousel {
+    height: 200px;
+  }
+  .carousel-item {
+    font-size: 1.2rem;
+  }
+  .project-text {
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (max-width: 460px) {
+  #sobre-mim {
+    & .profile {
+        & p {
+          font-family: Arial, Helvetica, sans-serif;
+        }
+      }
+      & #foto {
+        text-align: center;
+        width: 50%;
+        height: auto;
+        margin-top: 5%;
+      }
+      & .circle-image:nth-last-child(1) {
+        width: 50%;
+        height: auto;
+      }
+    }
+    .carousel-container {
+    width: 100%;
+}
+    .carousel-caption {
+    font-size: 0.9rem;
+}
+    .logo {
+        font-size: 20px;
+    }
+
+    .profile h1 {
+        font-size: 28px;
+    }
+
+    .menu-button {
+        padding: 6px 12px;
+        font-size: 14px;
+    }
+
+    .images {
+        flex-direction: column;
+    }
+
+    .circle-image {
+        width: 100px;
+        height: 100px;
+    }
+
+    .dev-image {
+        width: 250px;
+    }
+    .contact form{
+      display: flex;
+      flex-direction: column;
+    }
+
+    footer {
+        font-size: 12px;
+    }
+}
+@media (max-width: 400px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+  .social-icons a {
+    font-size: 2.5rem;
+  }
+  .contact-text {
+    font-size: 0.9rem;
+  }
+  .prev {
+    left: -5px;
+}
+  .next {
+    right: -5px;
+}
+.carousel-slide img{
+  width: 70%;
+}
+}
+
+
+
+
+
+
+
+
+/* From Uiverse.io by ahmed150up */ 
+.card {
+  display: flex;
+  flex-wrap: nowrap;
+  height: 130px;
+  width: 550px;
+}
+
+.card svg {
+  padding: 0.5rem;
+  position: absolute;
+  display: flex;
+  width: 70%;
+  height: 100%;
+  font-size: 30px;
+  font-weight: 700;
+  opacity: 1;
+  transition: opacity 0.25s;
+  z-index: 2;
+  cursor: pointer;
+  color: #fff;
+}
+
+.card .social-link1,.card .social-link2,.card .social-link3,.card .social-link4 {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40%;
+  color: whitesmoke;
+  font-size: 24px;
+  text-decoration: none;
+  transition: 0.25s;
+  border-radius: 50px;
+  margin-left: 2%;
+  margin-right: 2%;
+
+}
+
+.card svg {
+  transform: scale(1);
+}
+
+.card .social-link1:hover {
+  background: #f09433;
+  background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+  background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+  animation: bounce_613 0.4s linear;
+}
+
+.card .social-link2:hover {
+  background-color: #00ccff;
+  animation: bounce_613 0.4s linear;
+}
+
+.card .social-link3:hover {
+  background-color: #5865f2;
+  animation: bounce_613 0.4s linear;
+}
+
+.card .social-link4:hover {
+  background-color: #12a50b;
+  animation: bounce_613 0.4s linear;
+}
+
+@keyframes bounce_613 {
+  40% {
+    transform: scale(1.4);
+  }
+
+  60% {
+    transform: scale(0.8);
+  }
+
+  80% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+#titulojs{
+    padding: 10%;
+    width: 40%;
+}
